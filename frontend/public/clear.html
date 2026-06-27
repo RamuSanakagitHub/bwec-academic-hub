@@ -1,0 +1,14 @@
+﻿<!DOCTYPE html>
+<html>
+<body style="font-family:sans-serif;background:#070d1a;color:#fff;display:flex;align-items:center;justify-content:center;height:100vh;margin:0">
+<div style="text-align:center">
+  <h2 style="color:#00d4ff">Clearing session...</h2>
+  <p style="color:#8fa3bf">Redirecting to login</p>
+</div>
+<script>
+  localStorage.clear();
+  sessionStorage.clear();
+  setTimeout(() => { window.location.href = '/login'; }, 800);
+</script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+{
+  "appId": "in.bwec.academic",
+  "appName": "BWEC Academic Hub",
+  "webDir": "dist",
+  "bundledWebRuntime": false,
+  "server": {
+    "cleartext": true
+  },
+  "android": {
+    "allowMixedContent": true,
+    "backgroundColor": "#070d1a",
+    "minWebViewVersion": 60
+  }
+}

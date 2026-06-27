@@ -1,0 +1,25 @@
+# Dependencies
+**/node_modules/
+
+# Environment files — contain secrets or machine-specific URLs
+backend/.env
+frontend/.env.mobile
+
+# Frontend build output
+frontend/dist/
+
+# Android build artifacts
+frontend/android/app/build/
+frontend/android/build/
+frontend/android/.gradle/
+frontend/android/local.properties
+frontend/android/app/.cxx/
+
+# OS & IDE
+.DS_Store
+Thumbs.db
+.idea/
+*.iml
+
+# Session planning docs (not part of the app)
+SESSION_CONTEXT.md
