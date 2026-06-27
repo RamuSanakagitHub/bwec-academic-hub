@@ -3,6 +3,7 @@
 
 # Environment files — contain secrets or machine-specific URLs
 backend/.env
+backend/.env.production
 frontend/.env.mobile
 
 # Frontend build output
