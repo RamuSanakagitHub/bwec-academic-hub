@@ -207,4 +207,16 @@ select.form-input option { background: var(--bg-card); }
   .sidebar { transform: translateX(-240px); }
   .sidebar.sidebar-open { transform: translateX(0); }
   .hamburger-btn { display: flex !important; }
+  .col-layout { grid-template-columns: 1fr !important; }
 }
+
+/* Responsive two-column layout (main + sidebar panel) */
+.col-layout {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 20px;
+}
+
+/* Prevent any horizontal overflow */
+body, .content { overflow-x: hidden; }
+* { max-width: 100%; box-sizing: border-box; }

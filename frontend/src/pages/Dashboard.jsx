@@ -84,7 +84,7 @@ export default function Dashboard() {
       </div>
 
       {/* Subjects grid + Recent scores */}
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 340px', gap: 20 }}>
+      <div className="col-layout">
         {/* Subjects */}
         <div>
           <div className="card">

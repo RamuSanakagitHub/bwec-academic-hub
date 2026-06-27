@@ -77,7 +77,7 @@ export default function AttendancePage() {
         ))}
       </div>
 
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 340px', gap: 20 }}>
+      <div className="col-layout">
         {/* Subject attendance cards */}
         <div>
           <h3 style={{ fontWeight: 700, marginBottom: 14, color: '#8fa3bf', textTransform: 'uppercase', fontSize: '0.82rem', letterSpacing: '0.5px' }}>Subject-wise Attendance</h3>
