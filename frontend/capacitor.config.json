@@ -4,7 +4,8 @@
   "webDir": "dist",
   "bundledWebRuntime": false,
   "server": {
-    "cleartext": true
+    "url": "https://bwec-academic-hub.vercel.app",
+    "cleartext": false
   },
   "android": {
     "allowMixedContent": true,
