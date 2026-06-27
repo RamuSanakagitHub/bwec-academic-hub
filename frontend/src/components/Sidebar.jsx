@@ -10,17 +10,19 @@ const navItems = [
   { path: '/attendance', label: 'Attendance', icon: '📊' },
 ];
 
-export default function Sidebar() {
+export default function Sidebar({ open, onClose }) {
   const { user, logout } = useApp();
   const navigate = useNavigate();
 
   const handleLogout = () => { logout(); navigate('/login'); };
+  const handleNav = () => { if (onClose) onClose(); };
 
   return (
-    <aside style={{
+    <aside className={`sidebar${open ? ' sidebar-open' : ''}`} style={{
       position: 'fixed', left: 0, top: 0, bottom: 0, width: '240px',
       background: '#060e1a', borderRight: '1px solid #1a2f45',
-      display: 'flex', flexDirection: 'column', zIndex: 100
+      display: 'flex', flexDirection: 'column', zIndex: 100,
+      transition: 'transform 0.28s cubic-bezier(0.4,0,0.2,1)'
     }}>
       {/* Logo */}
       <div style={{ padding: '20px 20px 16px', borderBottom: '1px solid #1a2f45' }}>
@@ -49,6 +51,7 @@ export default function Sidebar() {
             key={item.path}
             to={item.path}
             end={item.path === '/'}
+            onClick={handleNav}
             style={({ isActive }) => ({
               display: 'flex', alignItems: 'center', gap: 10,
               padding: '10px 12px', borderRadius: 8, marginBottom: 2,

@@ -195,3 +195,16 @@ select.form-input option { background: var(--bg-card); }
 /* Attendance bar */
 .att-bar-track { background: var(--border); border-radius: 4px; height: 8px; overflow: hidden; }
 .att-bar-fill { height: 100%; border-radius: 4px; transition: width 0.5s ease; }
+
+/* Mobile sidebar overlay */
+.sidebar-overlay {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.6);
+  z-index: 99;
+}
+
+@media (max-width: 768px) {
+  .sidebar { transform: translateX(-240px); }
+  .sidebar.sidebar-open { transform: translateX(0); }
+  .hamburger-btn { display: flex !important; }
+}

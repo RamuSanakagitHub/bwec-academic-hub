@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useApp } from '../context/AppContext';
 
-export default function Navbar() {
+export default function Navbar({ onMenuClick }) {
   const { user } = useApp();
   const navigate = useNavigate();
   const [search, setSearch] = useState('');
@@ -20,8 +20,13 @@ export default function Navbar() {
       height: '60px', background: '#070d1a',
       borderBottom: '1px solid #1a2f45',
       display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-      padding: '0 24px', position: 'sticky', top: 0, zIndex: 90
+      padding: '0 16px', position: 'sticky', top: 0, zIndex: 90
     }}>
+      <button
+        className="hamburger-btn"
+        onClick={onMenuClick}
+        style={{ background: 'transparent', border: 'none', color: '#00d4ff', fontSize: '1.4rem', cursor: 'pointer', padding: '4px 8px', marginRight: 8, display: 'none' }}
+      >☰</button>
       <form onSubmit={handleSearch} style={{ display: 'flex', alignItems: 'center', flex: 1, maxWidth: 520, gap: 8 }}>
         <div style={{ flex: 1, position: 'relative' }}>
           <span style={{ position: 'absolute', left: 12, top: '50%', transform: 'translateY(-50%)', color: '#4a6080', fontSize: '0.9rem' }}>🔍</span>

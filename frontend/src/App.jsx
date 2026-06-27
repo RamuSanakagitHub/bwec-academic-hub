@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { AppProvider, useApp } from './context/AppContext';
 import Sidebar from './components/Sidebar';
@@ -13,11 +13,15 @@ import AttendancePage from './pages/AttendancePage';
 import LoginPage from './pages/LoginPage';
 
 function Layout({ children }) {
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const close = () => setSidebarOpen(false);
+
   return (
     <div className="app-layout">
-      <Sidebar />
+      <Sidebar open={sidebarOpen} onClose={close} />
+      {sidebarOpen && <div className="sidebar-overlay" onClick={close} />}
       <div className="main-area">
-        <Navbar />
+        <Navbar onMenuClick={() => setSidebarOpen(o => !o)} />
         <main className="content">{children}</main>
       </div>
     </div>
